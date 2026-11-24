@@ -88,5 +88,3 @@ macOS uses the built-in four-finger pinch and spread gestures by default, and th
   - Press `⌃⌥Space` (Control + Option + Space) to toggle Launchly.
   - Click the grid icon in the menu bar and choose **Show Launchly**.
   - Run `open "launchly://show"` or `open "launchly://hide"` from Terminal.
-
-off campus code: G85WTB
