@@ -1,21 +1,30 @@
-# Launchly
+<p align="center">
+  <img src="Launchly/Resources/Assets.xcassets/AppIcon.appiconset/icon_256x256.png" width="128" height="128" alt="Launchly App Icon" />
+</p>
 
-Launchly is a native macOS menu-bar application launcher built to replace the default macOS Launchpad. Open a full-screen glassy app grid by pinching four fingers inward on your trackpad (thumb + three fingers), and pinch outward to return straight to what you were working on.
+<h1 align="center">Launchly</h1>
+
+<p align="center">
+  A native macOS menu-bar application launcher built to replace the default macOS Launchpad.<br/>
+  Pinch four fingers inward on your trackpad to open a full-screen glassy app grid, and pinch outward to return straight to what you were working on.
+</p>
 
 ![Launchly](screenshots/launchly-home.jpg)
 
 ## Features
 
-- **Four-finger pinch in & out**: Opens on a 4-finger pinch-in and dismisses back to your previous app on a 4-finger pinch-out using `MultitouchSupport.framework` loaded dynamically at runtime, with adjustable **Pinch sensitivity** in Settings.
-- **Apple Liquid Glass UI**: Uses native macOS 26+ Liquid Glass (`glassEffect`, `GlassEffectContainer`, `.buttonStyle(.glass)`) with `.ultraThinMaterial` fallbacks on macOS 14–15, keeps the macOS menu bar and Dock visible, and includes a **0%–100% Background opacity** slider from fully transparent to fully opaque.
-- **Hardware-accelerated edge-to-edge swiping**: Smooth 120fps CoreAnimation paging (`CASpringAnimation` with trackpad flick velocity) that glides icons all the way to the physical edges of the screen with minimal battery and GPU usage.
+- **Four-finger pinch in & out with adjustable Pinch sensitivity**: Opens on a 4-finger pinch-in and dismisses back to your previous app on a 4-finger pinch-out using `MultitouchSupport.framework`, with a **0%–100% Pinch sensitivity** slider in Settings so you can tune how lightly or firmly the gesture triggers.
+- **Apple Liquid Glass UI & adjustable Background opacity**: Uses native macOS 26+ Liquid Glass (`glassEffect`, `GlassEffectContainer`, `.buttonStyle(.glass)`) with `.ultraThinMaterial` fallbacks on macOS 14–15, keeps the macOS menu bar and Dock visible, and includes a **0%–100% Background opacity** slider ranging from fully transparent to fully opaque blurred wallpaper.
+- **Customizable grid size & icon size**: Tailor the layout to your screen in Settings with adjustable **Rows (3–8)**, **Columns (4–10)**, and **Icon Size (56–128 pt)**, plus a one-click **Reset Layout** option.
+- **Hardware-accelerated edge-to-edge swiping & Page swipe speed**: Smooth 120fps CoreAnimation paging (`CASpringAnimation` with trackpad flick velocity) that glides icons all the way to the physical edges of the screen with minimal battery and GPU usage, plus a **Page swipe speed** slider to dial in faster or slower page transitions.
+- **Hide & unhide apps**: Right-click any app in Launchly to hide it from your grid, and manage or **Unhide** hidden apps anytime from the **Hidden Apps** section in Settings.
 - **Drag-to-reorder, app groups (folders), and cross-page movement**:
   - Drag any app onto another app to quickly form a folder, or onto an existing folder to add it.
   - Drag apps or folders to the left/right screen edges (or press `←`/`→` while dragging, or right-click → **Move to Page**) to move them across pages.
   - Click inside folders to launch, rename, reorder, or drag apps back out.
 - **Flexible sorting**: Sort by **Custom**, **Name**, **Most Used**, **Date Added**, **Last Opened**, or **Size** (ascending or descending) directly from the `•••` menu in the search bar or Settings.
 - **Instant Spotlight search & keyboard navigation**: Search starts focused at the top (`Search Applications`), indexes Mac apps across standard application directories, and supports arrow-key navigation, `Return` to launch, and `Esc` to close folders / clear search / dismiss.
-- **Menu bar, global hotkey & URL triggers**: Lives cleanly in the menu bar (`LSUIElement`), supports `⌃⌥Space` toggle, Launch at Login, clicking empty space between icons to dismiss, and `launchly://show|hide|toggle`.
+- **Menu bar, global hotkey, Launch at Login & URL triggers**: Lives cleanly in the menu bar (`LSUIElement`), supports `⌃⌥Space` toggle, native **Launch at login**, clicking empty space between icons to dismiss, and `launchly://show|hide|toggle`.
 
 ## Download & Install
 
