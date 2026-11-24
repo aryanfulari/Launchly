@@ -17,13 +17,24 @@ Launchly is a native macOS menu-bar application launcher built to replace the de
 - **Instant Spotlight search & keyboard navigation**: Search starts focused at the top (`Search Applications`), indexes Mac apps across standard application directories, and supports arrow-key navigation, `Return` to launch, and `Esc` to close folders / clear search / dismiss.
 - **Menu bar, global hotkey & URL triggers**: Lives cleanly in the menu bar (`LSUIElement`), supports `⌃⌥Space` toggle, Launch at Login, clicking empty space between icons to dismiss, and `launchly://show|hide|toggle`.
 
+## Download & Install
+
+1. Download the latest **`Launchly-1.0.0.dmg`** from [GitHub Releases](https://github.com/aryanfulari/Launchly/releases/latest) (Universal binary — works on both Apple Silicon and Intel Macs running macOS 14.0+).
+2. Open the `.dmg` and drag **Launchly** into your **Applications** folder.
+3. **First launch (macOS Gatekeeper)**: Because Launchly is open-source and ad-hoc signed (not notarized with a paid Apple Developer ID), macOS may warn that it cannot be verified or appears damaged on first launch. To allow it:
+   - Run this once in Terminal:
+     ```zsh
+     xattr -cr /Applications/Launchly.app
+     ```
+   - Or open **System Settings › Privacy & Security**, scroll down, and click **Open Anyway**.
+4. Open **Launchly** from Applications, then disable the conflicting system trackpad gestures (see [Trackpad Gesture Setup](#trackpad-gesture-setup) below) so four-finger pinch works smoothly.
+
 ## Requirements
 
 - macOS 14.0+ (Apple Silicon or Intel)
-- Xcode 15+ (native Liquid Glass requires building with Xcode 26+ / macOS 26+ SDK)
-- [XcodeGen](https://github.com/yonaskolb/XcodeGen) (`brew install xcodegen`) only if regenerating `Launchly.xcodeproj` from `project.yml`
+- For building from source: Xcode 15+ (native Liquid Glass requires Xcode 26+ / macOS 26+ SDK), and [XcodeGen](https://github.com/yonaskolb/XcodeGen) (`brew install xcodegen`) only if regenerating `Launchly.xcodeproj` from `project.yml`
 
-## Build & Install
+## Build from Source
 
 ### Install Release App via Terminal
 

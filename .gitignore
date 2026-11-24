@@ -5,6 +5,7 @@ xcuserdata/
 
 # Build outputs
 build/
+dist/
 DerivedData/
 .build/
 
