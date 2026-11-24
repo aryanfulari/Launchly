@@ -1,0 +1,55 @@
+name: Launchly
+options:
+  bundleIdPrefix: com.aryanfulari
+  deploymentTarget:
+    macOS: "14.0"
+settings:
+  base:
+    SWIFT_VERSION: "5.0"
+    MACOSX_DEPLOYMENT_TARGET: "14.0"
+targets:
+  Launchly:
+    type: application
+    platform: macOS
+    sources:
+      - path: Launchly
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.aryanfulari.Launchly
+        PRODUCT_NAME: "$(TARGET_NAME)"
+        INFOPLIST_FILE: Launchly/Support/Info.plist
+        CODE_SIGN_ENTITLEMENTS: Launchly/Support/Launchly.entitlements
+        SWIFT_OBJC_BRIDGING_HEADER: Launchly/Support/Launchly-Bridging-Header.h
+        CODE_SIGN_IDENTITY: "-"
+        CODE_SIGN_STYLE: Manual
+        DEVELOPMENT_TEAM: ""
+        ENABLE_HARDENED_RUNTIME: NO
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+        MARKETING_VERSION: "1.0"
+        CURRENT_PROJECT_VERSION: "1"
+        COMBINE_HIDPI_IMAGES: YES
+  LaunchlyTests:
+    type: bundle.unit-test
+    platform: macOS
+    sources:
+      - path: LaunchlyTests
+      - path: Launchly/Model/LayoutStore.swift
+      - path: Launchly/Model/LayoutSorting.swift
+      - path: Launchly/Gesture/PinchDetector.swift
+    settings:
+      base:
+        GENERATE_INFOPLIST_FILE: YES
+        PRODUCT_BUNDLE_IDENTIFIER: com.aryanfulari.LaunchlyTests
+        CODE_SIGN_IDENTITY: "-"
+        CODE_SIGN_STYLE: Manual
+        DEVELOPMENT_TEAM: ""
+schemes:
+  Launchly:
+    build:
+      targets:
+        Launchly: all
+        LaunchlyTests: [test]
+    test:
+      targets:
+        - LaunchlyTests
